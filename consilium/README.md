@@ -37,9 +37,7 @@ provided tables for both MySQL and Postgres at the gist below
     Webmasters are selling widgets and we want to track the
     impressions from their websites to those widgets. Keep track of
     how many unique (via cookie) visitors vs raw (returning visitors)
-    this webmaster sent.
-
-    When counting clicks, a request which does not have a cookie
+    this webmaster sent. When counting clicks, a request which does not have a cookie
     stored is counted both as uniq and a raw impression. Set a cookie
     on the response so that they are no longer counted as unique for
     returning requests.
