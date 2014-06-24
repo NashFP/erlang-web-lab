@@ -1,0 +1,9 @@
+{application,hello_world,
+             [{description,"hello_world"},
+              {vsn,"1"},
+              {modules,[hello_world,hello_world_app,hello_world_resource,
+                        hello_world_sup]},
+              {registered,[]},
+              {applications,[kernel,stdlib,inets,crypto,mochiweb,webmachine]},
+              {mod,{hello_world_app,[]}},
+              {env,[]}]}.
