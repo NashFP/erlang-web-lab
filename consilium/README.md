@@ -18,7 +18,6 @@ provided tables for both MySQL and Postgres at the gist below
 
 ##API Resources
 
-##URI
 ```
 /register
 ```
