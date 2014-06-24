@@ -15,6 +15,8 @@ If you have a challenge for people to solve create a directory named {challenge-
 /hello-world/README.md
 ```
 
+### Contributing solutions
+
 If you want to contribute a solution to a challenge, add a directory below the challenge directory named {your twitter handle}+{webserver}+ such as:
 
 ```
