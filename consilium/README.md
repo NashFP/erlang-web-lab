@@ -9,7 +9,7 @@ following endpoints for you and/or your team to implement.
 The concept is merely to provide a RESTful JSON API to the wonderful
 webmasters of the world to "make that paper."
 
-In order to make "that paper" (I mean money), they will need to first,
+In order to "make that paper" (I mean money), they will need to first,
 register with your API and then send "traffic" to sell "widgets" which
 they will get credit for.
 
@@ -34,20 +34,29 @@ provided tables for both MySQL and Postgres at the gist below
 /clicks
 ```
 *Description*
-    Webmasters are selling widgets and we want to track the impressions from their websites to those widgets. Keep track of how many unique (via cookie) visitors vs raw (returning visitors) this webmaster sent.
+    Webmasters are selling widgets and we want to track the
+    impressions from their websites to those widgets. Keep track of
+    how many unique (via cookie) visitors vs raw (returning visitors)
+    this webmaster sent.
+
+    When counting clicks, a request which does not have a cookie
+    stored is counted both as uniq and a raw impression. Set a cookie
+    on the response so that they are no longer counted as unique for
+    returning requests.
 *Inputs*
     takes in a "webmaster id"
     takes in a "widget id"
 *Returns*
- an HTTP "OK"
-     an HTTP "ERROR"
+ an HTTP "OK" with the newly registered webmaster's ID
+ an HTTP "ERROR"
 
 *URI*
 ```
 /credit
 ```
 *Description*
-    This credits the webmaster with a sale of the given widget.
+    This credits the webmaster with a sale of the given widget. This
+    simply increments the sales column in the stats table.
 *Inputs*
     takes in a "webmaster id"
     takes in a "widget id"
@@ -67,7 +76,8 @@ provided tables for both MySQL and Postgres at the gist below
     takes in optionally a "widget id" (otherwise assumes show all widgets)
     takes in optionally a date (otherwise assumes the current date)
 *Returns*
-    an HTTP "OK" with the webmaster's "stats" unique/raw click impressions and sales for the day
+    an HTTP "OK" with the webmaster's "stats" unique/raw click
+    impressions and sales for the day in some intelligently formatted manner.
 
 ## Database Tables
 
